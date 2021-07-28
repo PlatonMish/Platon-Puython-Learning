@@ -1,0 +1,89 @@
+#Lesson 3
+#1) У вас есть переменная value, тип - int. Написать тернарный оператор для переменной new_value по такому правилу: если
+# value меньше 100, то new_value равно половине значения value, в противном случае - противоположне value число
+
+value = 102
+print("Value = ", format(value))
+new_value = 3
+
+if value < 100:
+    new_value = value/2
+    print("new_value = ", format(new_value))
+elif value >= 100:
+    while (value > 0):
+        # Logic
+        remainder = value % 10
+        new_value = (new_value * 10) + remainder
+        value = value // 10
+print("new_value = ", format(new_value))
+
+
+#2) У вас есть переменная value, тип - int. Написать тернарный оператор для переменной new_value по такому правилу: если
+# value меньше 100, то new_value равно 1, в противном случае - 0
+print("#####################################################")
+print("Задание №2")
+
+value = 100
+new_value = 0;
+
+if value < 100:
+    new_value = 1
+elif value >= 100:
+    new_value = 0
+print("Value = ", format(value))
+print("new_value = ", format(new_value))
+
+#3) У вас есть переменная value, тип - int. Написать тернарный оператор для переменной new_value по такому правилу: если
+# value меньше 100, то new_value равно True, в противном случае - False
+print("#####################################################")
+print("Задание №3")
+
+value = 213
+print("Value = ", format(value))
+new_value = True
+
+if value < 100:
+    new_value = True
+    print("new_value = True")
+elif value >= 100:
+    new_value = False
+    print("new_value = False")
+
+#4) У вас есть переменная my_str, тип - str. Заменить в my_str все маленькие буквы на большие.
+print("#####################################################")
+print("Задание №4")
+
+my_str = ("abcd")
+print(my_str)
+print(my_str.upper())
+
+#5) У вас есть переменная my_str, тип - str. Заменить в my_str все большие буквы на маленькие.
+print("#####################################################")
+print("Задание №5")
+
+my_str = ("ABCDEF")
+print(my_str)
+print(my_str.lower())
+
+#6) У вас есть переменная my_str, тип - str. Если ее длинна меньше 5, то допишите в конец строки себя же. Пример: было
+#- "qwer", стало - "qwerqwer". Если длинна не меньше 5, то оставить строку как есть.
+print("#####################################################")
+print("Задание №6")
+
+my_str =("King")
+print(my_str)
+if my_str.count(my_str) < 5:
+    print(my_str+my_str)
+
+#7) У вас есть переменная my_str, тип - str. Если ее длинна меньше 5, то допишите в конец строки перевернутую себя же.
+#Пример: было - "qwer", стало - "qwerrewq". Если длинна не меньше 5, то оставить строку как есть.
+print("#####################################################")
+print("Задание №7")
+
+my_str =("LOVE")
+print(my_str)
+if my_str.count(my_str) < 5:
+    print(my_str + my_str[::-1])
+elif my_str.count(my_str) >= 5:
+    print(my_str)
+    
