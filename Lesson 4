@@ -44,15 +44,32 @@ elif number_list >= 2:
     my_list.append(sum)
     print(my_list)
 
+#3) У вас есть список my_list с значениями типа int.
+#Если в my_list количество элементов меньше 2, то в конец добавить значение 0.
+#Если количество элементов больше или равно 2, то добавить сумму последних двух элементов.
+#Количество элементов в списке можно получить с помощью функции len(my_list)
+print("#####################################################")
+print("Задание №3 #2")
 
+my_list = [7,11,13,17]
+
+if len(my_list) < 2:
+    my_list.append(0)
+else:
+    my_list.append(my_list[-1] + my_list[-2])
+print(my_list)
 #4) Пользователь вводит value - число с запятой (например 3.14) с клавиатуры.
 #Вы приводите это value к типу float и выводите результат выражения value ** -1.
 #Написать программу, которая вычисляет данное выражение и
 #корректно обрабатывает возможные исключения.
 print("#####################################################")
 print("Задание №4")
-
 value = float(input('Input a decimal nunber'))
-print(value)
-answer = value ** -1
-print(answer)
+value_copy = value
+if value_copy == float:
+    print(value)
+    answer = value_copy ** -1
+    print(answer)
+else:
+    print("Type in a Decimal!")
+
