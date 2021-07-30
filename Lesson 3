@@ -1,21 +1,17 @@
-#Lesson 3
 #1) У вас есть переменная value, тип - int. Написать тернарный оператор для переменной new_value по такому правилу: если
 # value меньше 100, то new_value равно половине значения value, в противном случае - противоположне value число
 
 value = 102
 print("Value = ", format(value))
-new_value = 3
+new_value = 1
 
 if value < 100:
     new_value = value/2
-    print("new_value = ", format(new_value))
-elif value >= 100:
-    while (value > 0):
-        # Logic
-        remainder = value % 10
-        new_value = (new_value * 10) + remainder
-        value = value // 10
-print("new_value = ", format(new_value))
+else:
+    new_value = -value
+
+new_value = value/2 if value < 100 else - value
+print(new_value)
 
 
 #2) У вас есть переменная value, тип - int. Написать тернарный оператор для переменной new_value по такому правилу: если
@@ -24,14 +20,16 @@ print("#####################################################")
 print("Задание №2")
 
 value = 100
+print("Value = ", format(value))
 new_value = 0;
 
 if value < 100:
     new_value = 1
-elif value >= 100:
+else:
     new_value = 0
-print("Value = ", format(value))
-print("new_value = ", format(new_value))
+
+new_value = 1 if value < 100 else 0
+print(new_value)
 
 #3) У вас есть переменная value, тип - int. Написать тернарный оператор для переменной new_value по такому правилу: если
 # value меньше 100, то new_value равно True, в противном случае - False
@@ -44,10 +42,11 @@ new_value = True
 
 if value < 100:
     new_value = True
-    print("new_value = True")
-elif value >= 100:
+else:
     new_value = False
-    print("new_value = False")
+
+new_value = True if value < 100 else False
+print(new_value)
 
 #4) У вас есть переменная my_str, тип - str. Заменить в my_str все маленькие буквы на большие.
 print("#####################################################")
@@ -73,7 +72,8 @@ print("Задание №6")
 my_str =("King")
 print(my_str)
 if my_str.count(my_str) < 5:
-    print(my_str+my_str)
+    my_str = my_str * 2
+print(my_str)
 
 #7) У вас есть переменная my_str, тип - str. Если ее длинна меньше 5, то допишите в конец строки перевернутую себя же.
 #Пример: было - "qwer", стало - "qwerrewq". Если длинна не меньше 5, то оставить строку как есть.
@@ -86,4 +86,3 @@ if my_str.count(my_str) < 5:
     print(my_str + my_str[::-1])
 elif my_str.count(my_str) >= 5:
     print(my_str)
-    
