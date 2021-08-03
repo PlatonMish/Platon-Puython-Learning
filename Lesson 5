@@ -37,7 +37,7 @@ my_result = []
 
 for element in my_list_1:
     if element % 2 == 0:
-        my_result.append(element)
+        my_result.append(my_list_1)
 
 for element in my_list_2:
     if element % 2 != 0:
@@ -85,17 +85,21 @@ print("Задание №6")
 
 txt = ("69 меньше чем 420 но больше чем 21")
 
-def sum_digits_string(str1):
-    sum_digit = 0
-    for x in str1:
-        if x.isdigit() == True:
-            z = int(x)
-            sum_digit = sum_digit + z
+digits =[]
+words = txt.split()
+for word in words:
+    if word.isdigit():
+        digits.append(int(word))
+print(words)
+#def sum_digits_string(str1):
+#    sum_digit = 0
+#    for x in str1:
+#        if x.isdigit() == True:
+#            z = int(x)
+#            sum_digit = sum_digit + z
 
-    return sum_digit
+#    return sum_digit
 
-
-print(sum_digits_string(txt))
 #Не работает почему-то
 
 #7. Дана строка my_str в которой символы МОГУТ повторяться и два символа l_limit, r_limit,
@@ -110,8 +114,10 @@ print(my_str)
 
 l_limit = "o"
 r_limit = "g"
+l_limit_pos = my_str.find(l_limit)
+r_limit_pos = my_str.rfind(r_limit)
 
-sub_str = my_str[l_limit:r_limit]
+sub_str = my_str[l_limit_pos:r_limit_pos]
 print(sub_str)
 
 
@@ -121,7 +127,9 @@ print(sub_str)
 #(используйте срезы длинны 2)
 print("#####################################################")
 print("Задание №8")
-
+my_str = "adekaspofzkpdfnkd"
+for index in range (0, len(my_str), 2):
+    print(my_str[index:index + 2])
 
 #9. Дан список чисел. Определите, сколько в этом списке элементов,
 #которые больше суммы двух своих соседей (слева и справа), и НАПЕЧАТАЙТЕ КОЛИЧЕСТВО таких элементов.
@@ -129,3 +137,4 @@ print("Задание №8")
 #Для списка [2,4,1,5,3,9,0,7] ответом будет 3 потому что 4 > 2+1, 5 > 1+3, 9>3+0.
 print("#####################################################")
 print("Задание №9")
+#my_list[index] > my_list[index - 1] + my_list[index+1]
