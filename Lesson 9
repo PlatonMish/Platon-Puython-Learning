@@ -44,10 +44,24 @@ print(func2(["allo", "privet"]))
 #3. Написать функцию которой передается один параметр - список строк my_list.
 #Функция возвращает новый список в котором содержаться
 #элементы из my_list в которых есть символ - буква "a" на любом месте.
+print("#####################################################")
+print("Задание №3")
 
+#def func2(mylist):
+#    new_list = []
+#    for i in mylist:
+#        k += 1
+#        if i[k] == "a":
+ #           new_list.append(i)
+ #   return new_list
+
+print(func2(["allo", "privet"]))
 #4. Написать функцию которой передается один параметр - список строк my_list в
 #котором могут быть как строки (type str) так и целые числа (type int).
 #Функция возвращает новый список в котором содержаться только строки из my_list.
+print("#####################################################")
+print("Задание №4")
+
 def func(mylist):
     new_list = [] #новый список в который будем записывать строки из входного массива
     for i in mylist: # проходим по всему входному массиву
@@ -61,20 +75,77 @@ array = [1,2,"hello", "ghrh", 3]
 #5. Написать функцию которой передается один параметр - строка my_str.
 #Функция возвращает новый список в котором содержаться те символы из my_str,
 #которые встречаются в строке только один раз.
+print("#####################################################")
+print("Задание №5")
+
+lst = []
+def func_str(my_str):
+    my_str = 'Привет как дела '
+    for i in my_str:
+        if my_str.count(i) == 1:
+            lst.append(i)
+    return lst
+print(func_str(lst))
 
 #6. Написать функцию которой передается два параметра - две строки.
 #Функция возвращает список в который поместить те символы,
 #которые есть в обеих строках хотя бы раз.
+print("#####################################################")
+print("Задание №6")
+
+str1_ = "Белая машина"
+str2_ = "Красный мотоцикл"
+res = []
+def str1_2(my_str):
+    for i in str1_:
+        k = str1_.find(i) - str1_.rfind(i)
+        if k == 0:
+            print(i)
+            res.append(i)
+print(str1_2(res))
 
 #7. Написать функцию которой передается два параметра - две строки.
 #Функция возвращает список в который поместить те символы, которые есть в обеих строках,
 #но в каждой только по одному разу.
+print("#####################################################")
+print("Задание №7")
 
+
+str1_ = "Белая машина"
+str2_ = "Красный мотоцикл"
+res = []
+def str1_2_2(my_str):
+    for i in str1_ :
+        k = str1_.find(i) - str1_.rfind(i)
+        if k == 0:
+            if i in str2_ and str2_.find(i) - str2_.rfind(i) == 0 :
+                print(i)
+                res.append(i)
+print(str1_2_2(res))
 #8. Даны списки names и domains (создать самостоятельно).
 #Написать функцию для генерирования e-mail в формате:
 #фамилия.число_от_100_до_999@строка_букв_длинной_от_5_до_7_символов.домен
 #фамилию и домен брать случайным образом из заданных списков переданных в функцию в виде параметров.
 #Строку и число генерировать случайным образом.
+print("#####################################################")
+print("Задание №8")
+
+import smtplib
+from email.message import EmailMessage
+
+EmailAdd = "Email id" #senders Gmail id over here
+Pass = "Email Password" #senders Gmail's Password over here
+
+msg = EmailMessage()
+msg['Subject'] = 'Subject of the Email' # Subject of Email
+msg['From'] = EmailAdd
+msg['To'] = 'abc@mail.com','xyz@mail.com' # Reciver of the Mail
+msg.set_content('Mail Body') # Email body or Content
+
+#### >> Code from here will send the message << ####
+with smtplib.SMTP_SSL('smtp.gmail.com',465) as smtp: #Added Gmails SMTP Server
+    smtp.login(EmailAdd,Pass) #This command Login SMTP Library using your GMAIL
+    smtp.send_message(msg) #This Sends the message
 
 #Пример использования функции:
 #names = ["king", "miller", "kean"]
